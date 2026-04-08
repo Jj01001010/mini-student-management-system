@@ -1,0 +1,120 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini SMS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <main>
+        <div class="div-div">
+            <section class="login-section">
+                <div class="login-wrapper">
+                    <h1>Log in to your account</h1>
+                    <form id="login-form">
+                        <div class="input-box">
+                            <input type="text" class="user-name-login" placeholder="Username" required>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" class="user-pass-login" placeholder="Password" required>
+                        </div>
+                        <div class="button-container">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <section class="app-section hidden">
+            <div class="main-text-section">
+                <h3>Mini Student Management System</h3>
+                <button class="logout-button">
+                   <i class="fa-solid fa-sign-out-alt"></i>
+                </button>
+            </div>
+                <div class="student-count-container"> 
+                    <div class="total-container">
+                        <p class="total-text">Total Students</p>
+                        <p class="student-count"></p>
+                    </div>
+                    <div class="total-courses">
+                        <p class="total-course-text">Total Courses</p>
+                        <p class="course-count"></p>
+                    </div>
+                     <div class="highest-course-container">
+                        <p class="top-course-text">Top Course</p>
+                        <p class="highest-course"></p>
+                    </div>
+                    <div class="date-container">
+                        <p class="date-text">Date</p>
+                        <p class="date"></p>
+                    </div>
+                    <div class="time-container">
+                        <p class="time-text">Time</p>
+                        <p class="clock"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="app-wrapper">
+                
+                <div class="search-container">
+                    <input type="text" placeholder="Search student by Name" class="search-el">
+                    <button class="plus-btn" type="submit">
+                        <i class="fa-solid fa-plus"> </i>
+                        ADD STUDENT
+                    </button>
+                </div>
+            </div>
+            <div class="table-container">
+                <div class="student-container">
+                    <table>
+                        <thead>
+                            <tr>    
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Course</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="form-container hidden">
+        <div class="overlay-modal">
+            <form id="add-form">
+                <input type="text" placeholder="Name" class="name-el" required>
+                <input type="text" placeholder="Age" class="age-el" required>
+                <input type="text" placeholder="Course" class="course-el" required>
+                <input type="tel" placeholder="Mobile Number" class="phoneNum-el" required>
+                <input type="email" placeholder="Email" class="email-el" required>
+                <button class="add-btn" type="submit">ADD STUDENT</button>
+            </form>
+            <div>
+                <button class="cancel-btn">CANCEL</button>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
+
+
+
+
