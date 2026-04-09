@@ -139,6 +139,11 @@ body{
     cursor: pointer;
 }
 
+.search-container{
+    display: flex;
+    gap: 10px;
+}
+
 .student-container{
     display: flex;
     justify-content: center;
@@ -151,20 +156,6 @@ body{
     margin-bottom: 8px;
     border: 1px solid #ddd;
     border-radius: 5px;
-}
-
-.rendered-container{
-    display: grid;
-    gap: 5px;   
-    width: 100%;
-    font-size: 15px;
-    grid-template-columns: 200px 400px 200px 200px 100px 100px;
-
-    border-radius: 5px;
-    border: 1px solid rgb(224, 219, 219);
-    padding: 8px 10px;
-    color: rgb(73, 66, 66);
-    justify-content: center;
 }
 
 .edit-btn,
@@ -337,14 +328,13 @@ body{
     gap: 5px;
 
 }
-
 #add-form{
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 10px;
-    width: 300px;
-    
+    max-width: 300px;
+    width: 100%;
 }
 
 #add-form input{
@@ -358,7 +348,6 @@ body{
 
 .overlay-modal{
     background-color: rgb(142, 0, 0);
-    width: 100%;
     height: 400px;
     max-width: 400px;
     display: flex;
@@ -367,7 +356,8 @@ body{
     border-radius: 5px;
     flex-direction: column;
     gap: 10px;
-    padding: 150px;
+    padding: 20px;
+    width: 90%;
 }
 
 .cancel-btn{
@@ -393,6 +383,7 @@ body{
 table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: auto;
 }
 
 th, td {
@@ -409,11 +400,123 @@ td{
     background-color: rgb(245, 245, 245);
 }
 
+th, td{
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 10px;
+}
+
 .table-container{
     padding: 15px;
+    overflow-x: auto;
 }
 
 .no-data{
     text-align: center;
     color: #9c9292;
+
 }
+
+.swal2-popup {
+  font-size: 14px;
+  font-family: Georgia, serif;
+  width: 400px;
+}
+
+@media(max-width: 768px){
+
+    .student-count-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-text-section{
+        align-items: center;
+        max-width: 100%;
+        flex-direction: column;
+    }
+
+   .highest-course-container,
+    .time-container,
+    .date-container,
+    .total-courses,
+    .total-container{
+        max-width: 100%;
+    }
+
+    .plus-btn, .search-el{
+        width: 100%;
+    }
+
+    .app-wrapper{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media(max-width: 480px){
+     .student-count-container{
+        flex-direction: column;
+        align-items: center
+    }
+
+     .main-text-section{
+        align-items: stretch;
+        max-width: 100%;
+        flex-direction: column;
+    }
+
+   .highest-course-container,
+    .time-container,
+    .date-container,
+    .total-courses,
+    .total-container{
+        max-width: 400px;
+    }
+
+    .plus-btn, .search-el{
+        max-width: 400px
+    }
+
+    .app-wrapper{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    thead {
+        display: none
+    }
+
+    td {
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        padding: 8px;
+        border: none;
+        position: relative;
+    }
+
+    tr{
+        margin-bottom: 10px
+    }
+}
+
+
+

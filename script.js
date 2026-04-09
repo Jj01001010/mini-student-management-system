@@ -58,7 +58,7 @@ const timeNow = setInterval(() => {
     document.querySelector(".clock").innerHTML = timeString
 }, 1000)
 
-const date = new Date("April 09, 2026")
+const date = new Date()
 document.querySelector(".date").innerHTML = date.toLocaleDateString
 ('default', {month: 'long', day: 'numeric', year: 'numeric'})
 
@@ -322,10 +322,24 @@ function editStudent(id){
 
 logoutBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    localStorage.removeItem("currentUser")
-    loginSection.classList.remove('hidden')
-    appSection.classList.add("hidden")
-})
+
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You will be logged out",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, log me out',
+        cancelButtonText: 'No, cancel',
+        }).then((result) =>{
+            if(result.isConfirmed){
+                localStorage.removeItem("currentUser")
+                loginSection.classList.remove('hidden')
+                appSection.classList.add("hidden")
+            }
+        }
+    ) 
+})          
+
 
 
 
